@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'fm-root',
+  selector: 'my-root',
   imports: [RouterOutlet],
   template: `
     <h1>Welcome to {{title}}!</h1>
@@ -12,5 +12,5 @@ import { RouterOutlet } from '@angular/router';
   styles: [],
 })
 export class AppComponent {
-  title = 'an-fm-19';
+  title = 'angie';
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "an-fm-19": {
+    "angie": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -36,12 +36,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "fm",
+      "prefix": "my",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/an-fm-19",
+            "outputPath": "dist/angie",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [],
@@ -60,8 +60,7 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            },
-            "security": { "autoCsp": true }
+            }
           },
           "configurations": {
             "production": {
@@ -91,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "an-fm-19:build:production"
+              "buildTarget": "angie:build:production"
             },
             "development": {
-              "buildTarget": "an-fm-19:build:development"
+              "buildTarget": "angie:build:development"
             }
           },
           "defaultConfiguration": "development"
