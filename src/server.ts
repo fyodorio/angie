@@ -24,6 +24,10 @@ const angularApp = new AngularNodeAppEngine();
  *   // Handle API request
  * });
  * ```
+ * or
+ * ```ts
+ * app.use('/api/**', (req, res) => res.json({ hello: 'foo' }));
+ * ```
  */
 
 /**
