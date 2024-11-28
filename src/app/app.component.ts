@@ -6,17 +6,30 @@ import { Platform } from "@angular/cdk/platform";
   selector: 'my-root',
   imports: [RouterOutlet],
   template: `
-    <h1>Welcome to {{ title }}!</h1>
+    <main class="my-root">
+      <h1>Welcome to {{ title }}!</h1>
 
-    <p>Is Safari: {{ platform.SAFARI }}</p>
-    <p>Is Chrome: {{ platform.BLINK }}</p>
+      <section>
+        <p>Is Safari: {{ platform.SAFARI }}</p>
+        <p>Is Chrome: {{ platform.BLINK }}</p>
+      </section>
 
-    <router-outlet/>
+      <router-outlet/>
+    </main>
   `,
-  styles: [],
+  styles: `
+    .my-root {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+    }
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   platform = inject(Platform);
+
   title = 'angie';
 }

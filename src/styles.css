@@ -1,9 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-html, body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Inter, "Helvetica Neue", sans-serif;
-}
+@import url('stylesheets/base.css');
+@import url('stylesheets/variables.css');
+@import url('stylesheets/typography.css');
+@import url('stylesheets/layout.css');
+@import url('stylesheets/components.css');
