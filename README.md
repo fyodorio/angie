@@ -1,6 +1,14 @@
 # Angie
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
+Modern barebones Angular starter project generated using [Angular CLI](https://github.com/angular/angular-cli).
+
+### Featuring
+* SSR
+* Zoneless
+* Plain CSS
+* Angular CDK and animations
+* View transitions
+* Google Fonts
 
 ## Development server
 
