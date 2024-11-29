@@ -43,6 +43,13 @@ button, input, label {
   line-height: 1.1;
 }
 
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+  color: currentColor;
+}
+
 /* Improve media defaults */
 img, picture, video, canvas, svg {
   display: block;
@@ -71,11 +78,6 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
-}
-
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
 }
 
 /* Root host element styles (Angular-specific, project-specific) */

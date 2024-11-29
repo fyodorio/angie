@@ -1,0 +1,31 @@
+.btn {
+  display: inline-block;
+  border: none;
+  width: 100%;
+  border-radius: 2rem;
+  background: var(--color-primary);
+  padding: 0.5rem 1rem;
+  color: var(--color-white);
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--color-jade-200);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.btn:active,
+.btn:focus {
+  background: var(--color-jade-300);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.btn-cta {
+  border-radius: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}

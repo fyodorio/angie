@@ -1,4 +1,18 @@
 :root {
-  --primary-color: #0C8;
-  --secondary-color: #2D3656;
+  /* Color palettes */
+  --color-white: #fff;
+  --color-grey-800: #303030;
+  --color-grey-700: #474747;
+  --color-jade-200: #21E299;
+  --color-jade-250: #0C8;
+  --color-jade-300: #00b585;
+  --color-blue: #2D3656;
+
+  /* Main colors */
+  --color-primary: var(--color-jade-250);
+  --color-secondary: var(--color-blue);
+
+  /* Functional colors */
+  --color-background: var(--color-white);
+  --color-text: var(--color-grey-800);
 }

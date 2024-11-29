@@ -18,6 +18,7 @@ features (but not spoiled by unnecessary 3rd-party dependencies).
 * Single-file component schematic by default
 * Plain CSS split to functional modules
 * Remote Google Fonts loading
+* `NgOptimizedImage` usage
 
 ## Development server
 

@@ -1,35 +1,40 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Platform } from "@angular/cdk/platform";
+
+import { HeaderComponent } from './components/header.component';
+import { FooterComponent } from './components/footer.component';
 
 @Component({
   selector: 'my-root',
-  imports: [RouterOutlet],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent
+  ],
   template: `
-    <main class="my-root">
-      <h1>Welcome to {{ title }}!</h1>
-
-      <section>
-        <p>Is Safari: {{ platform.SAFARI }}</p>
-        <p>Is Chrome: {{ platform.BLINK }}</p>
-      </section>
-
-      <router-outlet/>
-    </main>
+    <div class="my-root">
+      <my-header/>
+      
+      <main>
+        <router-outlet/>
+      </main>
+      
+      <my-footer/>
+    </div>
   `,
   styles: `
     .my-root {
       display: flex;
       flex: 1;
       flex-direction: column;
-      background-color: var(--secondary-color);
-      color: var(--primary-color);
+      align-items: center;
+      justify-content: start;
+      min-width: 340px;
+      width: 100vw;
+      background-color: var(--color-background);
+      color: var(--color-text);
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  platform = inject(Platform);
-
-  title = 'angie';
-}
+export class AppComponent {}
