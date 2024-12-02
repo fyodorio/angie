@@ -2,7 +2,8 @@
 
 Modern opinionated barebones Angular starter project generated
 using [Angular CLI](https://github.com/angular/angular-cli) and enriched with the latest and experimental framework
-features (but not spoiled by unnecessary 3rd-party dependencies).
+features (but not spoiled by unnecessary 3rd-party dependencies). This boilerplate incorporates years of enterprise
+Angular apps development yielding into the main base principle: don't bloat the supply chain unless you like pain.
 
 ### Featuring
 
