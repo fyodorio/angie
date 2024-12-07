@@ -1,115 +1,115 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, WritableSignal } from '@angular/core';
+
+import { HeroComponent } from '../components/hero.component';
+import { NgOptimizedImage } from '@angular/common';
+import { FeatureItem } from '../models/feature-item.model';
+import { FeatureItemComponent } from '../components/feature-item.component';
 
 @Component({
   selector: 'my-landing',
-  imports: [],
+  imports: [
+    HeroComponent,
+    NgOptimizedImage,
+    FeatureItemComponent
+  ],
   template: `
-    <div class="content-area">
+    <section>
       <section id="hero">
-        <h2>Hero</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae pharetra lacus. Fusce a feugiat
-          turpis. Ut ut pharetra magna. Curabitur tincidunt nunc vel odio finibus sollicitudin. Aenean malesuada
-          semper risus quis consectetur. Donec semper vestibulum metus vitae eleifend. Integer sit amet convallis
-          ligula. Aenean orci purus, ultrices a fermentum sit amet, condimentum a dui. Sed ornare, ex ac aliquet
-          consectetur, nisi elit sagittis lorem, et condimentum sapien ante a sapien. Donec iaculis sodales ligula
-          et hendrerit. Donec sagittis arcu sed nunc vestibulum, mollis efficitur metus semper. Nulla neque eros,
-          accumsan eu placerat eget, elementum vitae neque. Fusce faucibus dignissim elit ut porta. Nulla non quam
-          in neque aliquet venenatis. Curabitur auctor facilisis bibendum. Ut convallis pellentesque leo, sit amet
-          condimentum lacus mattis eu.
-
-          Cras at velit elementum, placerat justo non, accumsan ligula. In ultricies dui ac nisl dignissim, quis
-          suscipit mi semper. Curabitur vitae lorem at arcu laoreet consectetur vel ac mi. Vivamus nec pharetra
-          erat. Ut ligula nisi, hendrerit vitae rutrum at, tempus ut quam. Proin convallis nec arcu sodales
-          molestie. Etiam semper ipsum metus, ultricies interdum leo pellentesque a. Maecenas suscipit mi ligula,
-          sed commodo leo lacinia pharetra. Etiam imperdiet, tellus ut ultrices tincidunt, mauris ipsum semper
-          tortor, sed dapibus lectus tellus eu nulla. Aenean vitae elit leo. Donec lobortis neque et sem iaculis
-          varius.
-
-          Mauris sed suscipit magna. Nunc blandit dui magna. Ut lacinia augue velit, id semper quam malesuada in.
-          Suspendisse placerat nisi vel ligula fermentum, eu volutpat nisi ullamcorper. Pellentesque vulputate, arcu
-          non tempus gravida, metus nunc accumsan lacus, nec congue odio elit vel felis. Duis vehicula pretium sem,
-          sed commodo turpis ornare id. Nunc ac felis gravida, efficitur nisl eget, rhoncus nisi. Donec vitae
-          ultricies odio, non blandit velit. Quisque porttitor magna eget mauris efficitur tempus.
-
-          Sed ornare ligula nec congue tristique. Aliquam posuere viverra facilisis. Curabitur scelerisque
-          condimentum magna, eget aliquet sem lacinia ut. Nulla malesuada lacus mauris, eget hendrerit augue
-          consectetur id. Aliquam non hendrerit tellus. Cras eget aliquet nibh, ut imperdiet arcu. Nulla facilisi.
-          In lobortis leo in turpis mattis, in malesuada ligula tristique. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Fusce ornare cursus velit sit amet facilisis.
-          Maecenas vitae nisi et libero bibendum porttitor. Nam blandit volutpat diam, ut tempus sapien eleifend at.
-          Aliquam erat volutpat.</p>
+        <div class="content-area">
+          <my-hero
+            [heroContent]="{ title: 'Build modern Angular apps with ease', subtitle: 'Angie is the modern opinionated barebones Angular starter project generated using Angular CLI and enriched with the latest and experimental framework features (but not spoiled by unnecessary 3rd-party dependencies'}"
+          />
+        </div>
       </section>
+
       <section id="value">
-        <h2>Value</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae pharetra lacus. Fusce a feugiat
-          turpis. Ut ut pharetra magna. Curabitur tincidunt nunc vel odio finibus sollicitudin. Aenean malesuada
-          semper risus quis consectetur. Donec semper vestibulum metus vitae eleifend. Integer sit amet convallis
-          ligula. Aenean orci purus, ultrices a fermentum sit amet, condimentum a dui. Sed ornare, ex ac aliquet
-          consectetur, nisi elit sagittis lorem, et condimentum sapien ante a sapien. Donec iaculis sodales ligula
-          et hendrerit. Donec sagittis arcu sed nunc vestibulum, mollis efficitur metus semper. Nulla neque eros,
-          accumsan eu placerat eget, elementum vitae neque. Fusce faucibus dignissim elit ut porta. Nulla non quam
-          in neque aliquet venenatis. Curabitur auctor facilisis bibendum. Ut convallis pellentesque leo, sit amet
-          condimentum lacus mattis eu.
-
-          Cras at velit elementum, placerat justo non, accumsan ligula. In ultricies dui ac nisl dignissim, quis
-          suscipit mi semper. Curabitur vitae lorem at arcu laoreet consectetur vel ac mi. Vivamus nec pharetra
-          erat. Ut ligula nisi, hendrerit vitae rutrum at, tempus ut quam. Proin convallis nec arcu sodales
-          molestie. Etiam semper ipsum metus, ultricies interdum leo pellentesque a. Maecenas suscipit mi ligula,
-          sed commodo leo lacinia pharetra. Etiam imperdiet, tellus ut ultrices tincidunt, mauris ipsum semper
-          tortor, sed dapibus lectus tellus eu nulla. Aenean vitae elit leo. Donec lobortis neque et sem iaculis
-          varius.
-
-          Mauris sed suscipit magna. Nunc blandit dui magna. Ut lacinia augue velit, id semper quam malesuada in.
-          Suspendisse placerat nisi vel ligula fermentum, eu volutpat nisi ullamcorper. Pellentesque vulputate, arcu
-          non tempus gravida, metus nunc accumsan lacus, nec congue odio elit vel felis. Duis vehicula pretium sem,
-          sed commodo turpis ornare id. Nunc ac felis gravida, efficitur nisl eget, rhoncus nisi. Donec vitae
-          ultricies odio, non blandit velit. Quisque porttitor magna eget mauris efficitur tempus.
-
-          Sed ornare ligula nec congue tristique. Aliquam posuere viverra facilisis. Curabitur scelerisque
-          condimentum magna, eget aliquet sem lacinia ut. Nulla malesuada lacus mauris, eget hendrerit augue
-          consectetur id. Aliquam non hendrerit tellus. Cras eget aliquet nibh, ut imperdiet arcu. Nulla facilisi.
-          In lobortis leo in turpis mattis, in malesuada ligula tristique. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Fusce ornare cursus velit sit amet facilisis.
-          Maecenas vitae nisi et libero bibendum porttitor. Nam blandit volutpat diam, ut tempus sapien eleifend at.
-          Aliquam erat volutpat.</p>
+        <article class="content-area">
+          <h2 class="centered-text">Everything you really need to create a full-stack Angular web app</h2>
+          <p class="landing-message">Don't over-bloat your starter boilerplate with unnecessary dependencies you will
+            need to maintain through endless pain and suffering, use what the framework provides you with
+            out-of-the-box</p>
+          <img ngSrc="img/all-the-data-pana.png" width="512" height="512" alt="all in one metaphor">
+        </article>
       </section>
+
       <section id="features">
-        <h2>Features</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae pharetra lacus. Fusce a feugiat
-          turpis. Ut ut pharetra magna. Curabitur tincidunt nunc vel odio finibus sollicitudin. Aenean malesuada
-          semper risus quis consectetur. Donec semper vestibulum metus vitae eleifend. Integer sit amet convallis
-          ligula. Aenean orci purus, ultrices a fermentum sit amet, condimentum a dui. Sed ornare, ex ac aliquet
-          consectetur, nisi elit sagittis lorem, et condimentum sapien ante a sapien. Donec iaculis sodales ligula
-          et hendrerit. Donec sagittis arcu sed nunc vestibulum, mollis efficitur metus semper. Nulla neque eros,
-          accumsan eu placerat eget, elementum vitae neque. Fusce faucibus dignissim elit ut porta. Nulla non quam
-          in neque aliquet venenatis. Curabitur auctor facilisis bibendum. Ut convallis pellentesque leo, sit amet
-          condimentum lacus mattis eu.
-
-          Cras at velit elementum, placerat justo non, accumsan ligula. In ultricies dui ac nisl dignissim, quis
-          suscipit mi semper. Curabitur vitae lorem at arcu laoreet consectetur vel ac mi. Vivamus nec pharetra
-          erat. Ut ligula nisi, hendrerit vitae rutrum at, tempus ut quam. Proin convallis nec arcu sodales
-          molestie. Etiam semper ipsum metus, ultricies interdum leo pellentesque a. Maecenas suscipit mi ligula,
-          sed commodo leo lacinia pharetra. Etiam imperdiet, tellus ut ultrices tincidunt, mauris ipsum semper
-          tortor, sed dapibus lectus tellus eu nulla. Aenean vitae elit leo. Donec lobortis neque et sem iaculis
-          varius.
-
-          Mauris sed suscipit magna. Nunc blandit dui magna. Ut lacinia augue velit, id semper quam malesuada in.
-          Suspendisse placerat nisi vel ligula fermentum, eu volutpat nisi ullamcorper. Pellentesque vulputate, arcu
-          non tempus gravida, metus nunc accumsan lacus, nec congue odio elit vel felis. Duis vehicula pretium sem,
-          sed commodo turpis ornare id. Nunc ac felis gravida, efficitur nisl eget, rhoncus nisi. Donec vitae
-          ultricies odio, non blandit velit. Quisque porttitor magna eget mauris efficitur tempus.
-
-          Sed ornare ligula nec congue tristique. Aliquam posuere viverra facilisis. Curabitur scelerisque
-          condimentum magna, eget aliquet sem lacinia ut. Nulla malesuada lacus mauris, eget hendrerit augue
-          consectetur id. Aliquam non hendrerit tellus. Cras eget aliquet nibh, ut imperdiet arcu. Nulla facilisi.
-          In lobortis leo in turpis mattis, in malesuada ligula tristique. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Fusce ornare cursus velit sit amet facilisis.
-          Maecenas vitae nisi et libero bibendum porttitor. Nam blandit volutpat diam, ut tempus sapien eleifend at.
-          Aliquam erat volutpat.</p>
+        <article class="content-area">
+          <h2>Explore the default features</h2>
+          @for (feature of features(); track feature.title) {
+            <my-feature-item [featureItem]="feature"/>
+          }
+        </article>
       </section>
-    </div>
+
+      <section id="cta">
+        <div class="content-area">
+          <my-hero
+            [heroContent]="{ title: 'Congratulations — your endless search is over 🎉', subtitle: 'Use the free open-source Angie starter now to build your new perfect shiny new app 🛠️', actionTitle: 'Get started now', actionRedirectUrl: '/app'}"
+          />
+        </div>
+      </section>
+    </section>
   `,
-  styles: ``,
+  styles: `
+    :host {
+      display: block;
+      width: 100%;
+    }
+
+    #value {
+      background-color: var(--color-tertiary);
+    }
+
+    #features {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+    }
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LandingComponent {}
+export class LandingComponent {
+  features: WritableSignal<FeatureItem[]> = signal([
+    {
+      title: 'SSR with hybrid rendering',
+      subtitle: 'The most modern and efficient approach to rendering web pages',
+      imageUrl: 'img/hybrid-car-rafiki.png',
+      imageAltText: 'hybrid car as hybrid rendering metaphor',
+      isReverse: false
+    },
+    {
+      title: 'API routes with express',
+      subtitle: 'No need for a separate back end — use integrated minimal trusted Node.js framework',
+      imageUrl: 'img/toll-road-cuate.png',
+      imageAltText: 'toll road gates as API routes metaphor',
+      isReverse: true
+    },
+    {
+      title: 'Zoneless change detection',
+      subtitle: 'Break through the limits of conventional Zone.js abstractions and go lightweight',
+      imageUrl: 'img/breaking-barriers-amico.png',
+      imageAltText: 'a man breaking a brick wall as a metaphor for zoneless change detection',
+      isReverse: false
+    },
+    {
+      title: 'Angular CDK and animation',
+      subtitle: 'Use robust and accessible headless component primitives from the framework team to build your own bespoke UIs',
+      imageUrl: 'img/construction-costs-amico.png',
+      imageAltText: 'construction building blocks as CDK metaphor',
+      isReverse: true
+    },
+    {
+      title: 'Plain CSS stylesheets',
+      subtitle: 'Stick with simple modern CSS approach instead of complex heavy unnecessary libraries',
+      imageUrl: 'img/forest-pana.png',
+      imageAltText: 'nature as a plain CSS metaphor',
+      isReverse: false
+    },
+    {
+      title: 'And much much more',
+      subtitle: 'All the latest and greatest innovations in Angular and Web APIs without the burden of unnecessary 3rd party dependencies',
+      imageUrl: 'img/niche-service-marketplace-amico.png',
+      imageAltText: 'mobile marketplace app as a metaphor for multiple options of ecosystem tools',
+      isReverse: true
+    }
+  ])
+}

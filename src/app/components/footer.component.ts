@@ -8,6 +8,7 @@ import { Platform } from '@angular/cdk/platform';
     <footer>
       <div class="content-area content-butterfly">
         <div>Copyright © 2024 fyodor.io</div>
+        <div class="credits">Illustrations by <a href="https://storyset.com/">Storyset</a></div>
         <div>
           <p>Is Safari: {{ platform.SAFARI }} @if (platform.SAFARI) {
             ✅
@@ -28,7 +29,12 @@ import { Platform } from '@angular/cdk/platform';
       </div>
     </footer>
   `,
-  styles: `:host { display: block; width: 100%; } `,
+  styles: `
+    :host { display: block; width: 100%; }
+    .credits {
+      color: var(--color-tertiary);
+    }
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent {

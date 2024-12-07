@@ -32,7 +32,7 @@ import { FooterComponent } from './components/footer.component';
       min-width: 340px;
       width: 100vw;
       background-color: var(--color-background);
-      color: var(--color-text);
+      color: var(--color-foreground);
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
