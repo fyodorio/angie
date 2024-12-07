@@ -19,6 +19,11 @@ import { FeatureItemComponent } from '../components/feature-item.component';
           <my-hero
             [heroContent]="{ title: 'Build modern Angular apps with ease', subtitle: 'Angie is the modern opinionated barebones Angular starter project generated using Angular CLI and enriched with the latest and experimental framework features (but not spoiled by unnecessary 3rd-party dependencies'}"
           />
+          <section class="scroller">
+            <a href="#value">
+              <img ngSrc="icons/scroller.svg" width="40" height="40" alt="scroll down to discover more">
+            </a>
+          </section>
         </div>
       </section>
 
@@ -56,6 +61,10 @@ import { FeatureItemComponent } from '../components/feature-item.component';
       width: 100%;
     }
 
+    #hero {
+      padding-bottom: 3rem;
+    }
+
     #value {
       background-color: var(--color-tertiary);
     }
@@ -63,6 +72,11 @@ import { FeatureItemComponent } from '../components/feature-item.component';
     #features {
       background-color: var(--color-secondary);
       color: var(--color-white);
+    }
+    
+    .scroller {
+      margin-top: 5rem;
+      padding-bottom: 0;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
