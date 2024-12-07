@@ -25,6 +25,7 @@ behaviour even with smallest framework updates, that's why unit testing is fully
 * Plain CSS split to functional modules
 * Remote Google Fonts loading
 * `NgOptimizedImage` usage
+* Responsive design
 
 ## Development server
 
