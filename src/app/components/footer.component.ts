@@ -30,9 +30,20 @@ import { Platform } from '@angular/cdk/platform';
     </footer>
   `,
   styles: `
-    :host { display: block; width: 100%; }
+    :host {
+      display: block;
+      width: 100%;
+    }
+
     .credits {
       color: var(--color-tertiary);
+    }
+
+    @media (max-width: 640px) {
+      .content-area {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush

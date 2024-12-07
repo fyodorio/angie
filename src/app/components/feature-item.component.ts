@@ -19,8 +19,11 @@ import { FeatureItem } from '../models/feature-item.model';
     </div>
   `,
   styles: `
-    :host { display: block; width: 100%; }
-    
+    :host {
+      display: block;
+      width: 100%;
+    }
+
     .feature-item {
       display: flex;
       gap: 1.5rem;
@@ -37,6 +40,22 @@ import { FeatureItem } from '../models/feature-item.model';
 
     p {
       text-align: start;
+    }
+    
+    @media (max-width: 640px) {
+      .feature-item, .reversed {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      article {
+        align-items: center;
+      }
+
+      p {
+        text-align: center;
+      }
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush

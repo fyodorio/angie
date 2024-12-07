@@ -73,10 +73,20 @@ import { FeatureItemComponent } from '../components/feature-item.component';
       background-color: var(--color-secondary);
       color: var(--color-white);
     }
-    
+
     .scroller {
       margin-top: 5rem;
       padding-bottom: 0;
+    }
+
+    @media (max-width: 640px) {
+      .scroller {
+        margin-top: 1rem;
+      }
+
+      #hero {
+        padding-top: 2rem;
+      }
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush

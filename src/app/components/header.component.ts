@@ -27,11 +27,22 @@ import { RouterLink } from '@angular/router';
     </header>
   `,
   styles: `
-    :host { display: block; width: 100%; }
+    :host {
+      display: block;
+      width: 100%;
+    }
+
     .brand {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .content-area {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
