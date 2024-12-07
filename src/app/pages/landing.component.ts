@@ -101,7 +101,7 @@ export class LandingComponent {
       isReverse: false
     },
     {
-      title: 'API routes with express',
+      title: 'API routes with Express.js',
       subtitle: 'No need for a separate back end — use integrated minimal trusted Node.js framework',
       imageUrl: 'img/toll-road-cuate.png',
       imageAltText: 'toll road gates as API routes metaphor',
